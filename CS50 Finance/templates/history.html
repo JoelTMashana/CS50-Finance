@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+         <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+              <h1 class ="Display-2">Transactions</h1>
+         </div>
+         <div class="col-md-12">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Stock</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Date</th>
+                      </tr>
+                  </thead>
+                    {% for stock in history%}
+                      <tr>
+                          <td>{{stock.stock}}</td>
+                          <td>{{stock.quantity}}</td>
+                          <td>{{stock.price}}</td>
+                          <td>{{stock.date}}</td>
+                      </tr>
+                     {% endfor %}
+              </table>
+         </div>
+      </div>
+
+    </div>
+{% endblock %}

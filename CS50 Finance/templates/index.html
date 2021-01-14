@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+              <h1 class ="Display-2">Porfolio</h1>
+         </div>
+         <div class="col-md-12">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Stock</th>
+                          <th>Company name</th>
+                          <th>Shares</th>
+                          <th>Price</th>
+                          <th>Total value</th>
+                      </tr>
+                  </thead>
+                    {% for stock in portfolio%}
+                      <tr>
+                          <td>{{stock.stock}}</td>
+                          <td>{{stock.company}}</td>
+                          <td>{{stock.shares}}</td>
+                          <td>{{stock.pps}}</td>
+                          <td>{{stock.total_value}}</td>
+                      </tr>
+                     {% endfor %}
+                      <tr>
+                          <td><strong>Cash</strong></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>{{cash}}</td>
+                          <td></td>
+                      </tr>
+              </table>
+         </div>
+      </div>
+
+    </div>
+
+
+{% endblock %}
